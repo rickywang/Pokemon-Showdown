@@ -446,5 +446,58 @@
 			this.add('-message', haikus[0]);
 		},
 		ruleset: ['PotD', 'Pokemon', 'Sleep Clause']
-	}
+	},
+	// May Mayhem, May 2013
+	seasonalmaymayhem: {
+		name: "[Seasonal] May Mayhem",
+		section: "OM of the Month",
+		
+		team: 'randomSeasonalMM',
+		canUseRandomTeam: true,
+		effectType: 'Format',
+		rated: true,
+		challengeShow: true,
+		searchShow: true,
+		ruleset: ['HP Percentage Mod'],
+		onBegin: function() {
+			// Shameless plug
+			var date = Date();
+			date = date.split(' ');
+			if (parseInt(date[2]) === 12) {
+				this.add('-message', 'Wish a HAPPY BIRTHDAY to Treecko37!!');
+			}
+			if (parseInt(date[2]) === 16) {
+				this.add('-message', 'Wish a HAPPY BIRTHDAY to Joim!!');
+			}
+			this.add('-message', 'Wish a HAPPY BIRTHDAY to Birkal!!');
+		},
+		onSwitchIn: function(pokemon) {
+			var msg = '';
+			switch (pokemon.name) {
+			case 'Celebi':
+				msg = 'Do or Do not. There is no try.';
+				break;
+			case 'Clefairy':
+				msg = 'You have your moments. Not many of them, but you do have them.';
+				break;
+			case 'Piloswine':
+				msg = 'Gggggaaaaaaarrrrr. Arrrrhhhn.';
+				break;
+			case 'Deoxys':
+				msg = '*hhhh* I am your father. *hhhh*';
+				break;
+			case 'Clefable':
+				msg = 'I did shoot first.';
+				break;
+			case 'Jirachi':
+				msg = 'May the force be with you.';
+				break;
+			default:
+				var dice = this.random(100);
+				if (dice < 25) msg = 'Never gonna give you up, never gonna let you down';
+				break;
+			}
+			if (msg !== '') this.add('-message', msg);
+		}
+	},
 }
