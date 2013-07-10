@@ -16,7 +16,7 @@ exports.proxyip = false;
 //   Don't change this setting - there aren't any other login servers right now
 exports.loginserver = 'http://play.pokemonshowdown.com/';
 exports.loginserverkeyalgo = "RSA-SHA1";
-exports.loginserverpublickeyid = 2;
+exports.loginserverpublickeyid = 1;
 exports.loginserverpublickey = "-----BEGIN RSA PUBLIC KEY-----\n" +
 	"MIICCgKCAgEAtFldA2rTCsPgqsp1odoH9vwhf5+QGIlOJO7STyY73W2+io33cV7t\n" +
 	"ReNuzs75YBkZ3pWoDn2be0eb2UqO8dM3xN419FdHNORQ897K9ogoeSbLNQwyA7XB\n" +
